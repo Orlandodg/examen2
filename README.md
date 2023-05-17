@@ -1,12 +1,33 @@
-# examen2
-ejercicio 2
-public class FrecuenciaCardiaca {
-private String nombre;
-private String paterno;
-private String materno;
-private int diadenacimiento;
-private int mesnacimiento;
-private int añonacimiento;
+package examene2;
+public class FrecuenciasCardiacas {
+    public String nombre;
+    public String apellidos;
+    public int dia;
+    public int mes;
+    public int año;
+
+    public FrecuenciasCardiacas(String nombre, String apellidos, int dia, int mes, int año) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.dia = dia;
+        this.mes = mes;
+        this.año = año;
+    }
+
+  
+
+    public FrecuenciasCardiacas(String nombre, String apellidos) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+    }
+
+    public FrecuenciasCardiacas(int dia, int mes, int año) {
+        this.dia = dia;
+        this.mes = mes;
+        this.año = año;
+    }
+    
+    
 
     public String getNombre() {
         return nombre;
@@ -16,69 +37,53 @@ private int añonacimiento;
         this.nombre = nombre;
     }
 
-    public String getPaterno() {
-        return paterno;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setPaterno(String paterno) {
-        this.paterno = paterno;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
-    public String getMaterno() {
-        return materno;
+    public int getDia() {
+        return dia;
     }
 
-    public void setMaterno(String materno) {
-        this.materno = materno;
+    public void setDia(int dia) {
+        this.dia = dia;
     }
 
-    public int getDiadenacimiento() {
-        return diadenacimiento;
+    public int getMes() {
+        return mes;
     }
 
-    public void setDiadenacimiento(int diadenacimiento) {
-        this.diadenacimiento = diadenacimiento;
+    public void setMes(int mes) {
+        this.mes = mes;
     }
 
-    public int getMesnacimiento() {
-        return mesnacimiento;
+    public int getAño() {
+        return año;
     }
 
-    public void setMesnacimiento(int mesnacimiento) {
-        this.mesnacimiento = mesnacimiento;
+    public void setAño(int año) {
+        this.año = año;
     }
+    
+    public int verEdad (){
+    int edad,frecCa,f1,f2;
+    
+    edad= 2023-año;
+    frecCa=220-edad;
+    f1=(int)(frecCa*.50);
+    f2=(int)(frecCa*.85);
+    System.out.println("Su edad es: "+edad+" años");
+    System.out.println("Su frecuencia cardica maxima es: "+frecCa);
+    System.out.println("Su frecuencia cardica esperada debe de estar de entre: "+f1+" y "+f2);
+    
+        return 0;
 
-    public int getAñonacimiento() {
-        return añonacimiento;
     }
-
-    public void setAñonacimiento(int añonacimiento) {
-        this.añonacimiento = añonacimiento;
-    }
-
-    public String mostraredadpersona(){
-        String ed = diadenacimiento+"/"+mesnacimiento+"/"+añonacimiento;
-        return ed;
-    }
-    public int getedad()
-    {
-        int hoydia= 06;
-        int hoymes=05;
-        int hoyaño= 2023;
-        int calculo1= 1000*hoyaño+100+hoymes+hoydia;
-        int calculo2= 1000*añonacimiento+100*mesnacimiento+diadenacimiento;
-        
-        return(int)(calculo1-calculo2)/1000;
-    }
-    public int getfrecuenciacardiacamaxima()
-    {
-        return 220- getedad();
-    }
-    public String getintervalofrecuencialcardiacaesperada()
-    {
-     return String.format("[%,1f - %,1f]",
-     (float )getfrecuenciacardiacamaxima() *0.58,
-     (float) getfrecuenciacardiacamaxima()* 0.58);    }
-        
-    }
+  
+    
+    
     
